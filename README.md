@@ -1,6 +1,6 @@
 # contrasts
 
-<img src="https://files.slack.com/files-tmb/T2PEMCS9K-F5GDWBBC3-7386242941/pasted_image_at_2017_05_22_05_01_pm_480.png">
+https://files.slack.com/files-tmb/T2PEMCS9K-F5GDWBBC3-7386242941/pasted_image_at_2017_05_22_05_01_pm_480.png
 
  my Spiel would be cognitive. that stats are "m'eh" but the real game is showing decision makers  things that let them do things. so informative "visualizations" that highligtht the deltas between things (Kelly's personnel construct theory: folks dont know "things", what they really know are the minimal differences between things) .
 
