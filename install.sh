@@ -1,3 +1,6 @@
+cd
+mkdir tmp
+cd tmp
 wget https://ftp.gnu.org/gnu/gawk/gawk-4.1.4.tar.xz
 tar xvf gawk-4.1.4.tar.xz 
 cd gawk-4.1.4/ 
