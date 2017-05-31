@@ -11,3 +11,17 @@ the final cherry on this cake would be scott-knot stuff seen at icse recently wh
 so not sure if that is an REU thing or a lecture for my foundations of software science thing in the fall
 
 your call. happy to help. happy to not. what ya need?
+
+# Maths that matters
+
+Cognitive maths. Maths that fuels human decision making:
+
+- explaination is task-depnedent: supervised learning rules (different atsks, different learning)
+- Don't sweat the small stuff: effect size, scott-knott
+- Maths of n-dimensional sphere: low-dimensional or not at all (+)
+- Kelly's peresonnel constract theory: dont show what is, show what is different
+- Minimize confusion: reduce expected value of variance or entropy
+
+(+) note: cool if we are human intelligence. May not hold for super-human intelligence.
+
+
