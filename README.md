@@ -17,6 +17,7 @@ your call. happy to help. happy to not. what ya need?
 Cognitive maths. Maths that fuels human decision making:
 
 - explaination is task-depnedent: supervised learning rules (different atsks, different learning)
+- instance-based reasoning: don't think, rememoer over a small library of examplars
 - Don't sweat the small stuff: effect size, scott-knott
 - Maths of n-dimensional sphere: low-dimensional or not at all (+)
 - Kelly's peresonnel constract theory: dont show what is, show what is different
