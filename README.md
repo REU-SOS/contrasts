@@ -306,9 +306,12 @@ The above methods
 BTW, once we know how to do exemplars:
 
 - big data moves to little data
-- big data is useful for initial data collection
-- little data is where all the subsequent inference happens
-- [The secret of big data is little data](https://mitpress.mit.edu/big-data-little-data-no-data)
+    - big data is useful for initial data collection
+    - little data is where all the subsequent inference happens
+    - [The secret of big data is little data](https://mitpress.mit.edu/big-data-little-data-no-data)
+- we can ship models with a _certification envelope_; i.e. the core examples from which we defined a model
+    - ring an alarm bell if new data not in the certification envelope
+    - no more crashing columbia space shuttles.
 _____
 
 # Old nodes, plz ignore
