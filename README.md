@@ -23,7 +23,7 @@ Columbia, and crew, dies on re-entry
 - If new tests outside of the envelope of the training set then raise an alert 
 
 
-# Congitive
+# Cognitive
 
 ![image](https://cloud.githubusercontent.com/assets/29195/26566573/27c63d1c-44c2-11e7-9506-d4294969e171.png)
 
