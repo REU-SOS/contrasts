@@ -14,7 +14,7 @@ Pre-prints at [http://tiny.cc/menzies](http://tiny.cc/menzies)
 
 ## Results from last REU
 
-![image](https://arxiv.org/pdf/1702.07735.pdf)
+[Better Predictors for Issue Lifetime, Mitch Rees-Jones, Matthew Martin, Tim Menzies](https://arxiv.org/pdf/1702.07735.pdf)
 
 ![image](http://www.ukpostroom.com/images/current-projects.jpg)
 
