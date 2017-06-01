@@ -121,7 +121,7 @@ BTW, there are many other ways to find these centroids:
 
 - find  _epsilon_ ; 
         - e.g. something less than what the business users can control
-        - e.g. some small fraction of the standard devaition 
+        - e.g. some small fraction of the standard deviation 
         - _Cohen_ is a heuristic for detecting tricially small differences. Trivial if less than _cohen\*sd_  different
         - Cohen=(0.2,0.5,0.8) = small, medium, large
         - But this is [somewhat contraversial](https://en.wikipedia.org/wiki/Effect_size#Effect_sizes_descriptors)
