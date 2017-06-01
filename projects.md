@@ -10,7 +10,7 @@ FeedbackL does it work?
 
 - fI we tell developers that X is a problem, do they change that
 - If they change that, does it matter?
-- intelligent learning of changes (XTREE)
+- intelligent learning of changes [XTREE](https://arxiv.org/pdf/1609.03614)
 
 Hero-based programming
 
