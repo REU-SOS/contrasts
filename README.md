@@ -193,7 +193,7 @@ Aside: this cose uses  _expectedValue_
 - Expected value = _E = n1/n \* x1 + n2/n \* x2_
 - e.g. see the _tmp_ line, below:
 
-Which the following code uses to recusrively split the bins generated above:
+Which the following code uses to recursively split the bins generated above:
 
 ```c
 function binsCuts(lo,hi,ranks,b4,r,
