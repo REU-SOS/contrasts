@@ -4,6 +4,10 @@ Raise lab: [real-world AI for SE](http://ai4se.net/)
 
 ![image](https://cloud.githubusercontent.com/assets/29195/26688086/b1bc9ce2-46bf-11e7-98ab-4f75380b3677.png)
 
+Latest work: pre-prints at [http://tiny.cc/menzies](http://tiny.cc/menzies)
+
+![image](https://cloud.githubusercontent.com/assets/29195/26688608/2053c670-46c1-11e7-8a0a-1207e21abdb3.png)
+
 ## RTP client
 
 Is agile any good?
