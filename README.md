@@ -265,7 +265,7 @@ For this to work, we need fast ways to incrementally collect mu and standard dev
 In the following, we use assue _x,y_ can report their mean and standard deviation and sample size as e.g.
 `x.n, x.mu, x,sd`.
 
-The Hedges effect size test using magiv numbers from [this study](https://goo.gl/w62iIL). If checks of
+The Hedges effect size test using magic numbers from [this study](https://goo.gl/w62iIL). If checks of
 the difference in the mean divided by the standard deviation is bigger than some magic number (0.38)
 
 ```c
@@ -296,7 +296,7 @@ function ttest(x,y,s,    t,a,b,df,c) {
 
 ## In practice:
 
-The above methods
+The above methods:
 
 - divide many continuous distributions into a handful of bins
 - select for a handful of rows
@@ -314,7 +314,7 @@ BTW, once we know how to do exemplars:
     - no more crashing columbia space shuttles.
 _____
 
-# Old nodes, plz ignore
+# Old notes, plz ignore
 
 maths that matters
 my Spiel would be cognitive. that stats are "m'eh" but the real game is showing decision makers  things that let them do things. so informative "visualizations" that highligtht the deltas between things (Kelly's personnel construct theory: folks dont know "things", what they really know are the minimal differences between things) .
