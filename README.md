@@ -303,6 +303,12 @@ The above methods
 - allow us to find a handful of most useful columns
 - and that reduced space [works just as well for data mining as the original space](https://goo.gl/hG5zaR)
 
+BTW, once we know how to do exemplars:
+
+- big data moves to little data
+- big data is useful for initial data collection
+- little data is where all the subsequent inference happens
+- [The secret of big data is little data](https://mitpress.mit.edu/big-data-little-data-no-data)
 _____
 
 # Old nodes, plz ignore
