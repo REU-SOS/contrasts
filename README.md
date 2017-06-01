@@ -42,10 +42,12 @@ e.g. Kelly's personel construct theory:
 
 ## Instance-Based Reasoning
 
-Roger Shank: people don't think, they remember
+Roger Shank: [people don't think, they remember](https://www.edge.org/documents/ThirdCulture/q-Ch.9.html)
 
 - Reasoning = reflecting over one's own library of _exemplars_ of past events
 - Learning = finding good _exemplars_
+
+![eg](http://cbrwiki.fdi.ucm.es/mediawiki/images/thumb/0/0b/Cbr.png/335px-Cbr.png)
 
 Note that most data sets contain such exemplars:
 
