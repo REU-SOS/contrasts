@@ -265,7 +265,7 @@ For this to work, we need fast ways to incrementally collect mu and standard dev
 In the following, we use assue _x,y_ can report their mean and standard deviation and sample size as e.g.
 `x.n, x.mu, x,sd`.
 
-The Hedges effect size test using magic numbers from [this study](https://goo.gl/w62iIL). If checks of
+The Hedges effect size test using magic numbers from [this study](https://pdfs.semanticscholar.org/e6be/263f60ccfb294e14422f0e0162b1367063a2.pdf). If checks of
 the difference in the mean divided by the standard deviation is bigger than some magic number (0.38)
 
 ```c
