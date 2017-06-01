@@ -39,7 +39,6 @@ e.g. Kelly's personel construct theory:
 - humans reason about the difference between our constructs rather than the constructs themselves
 - Kelly, George (1991) [first publsihed 1955]. The psychology of personal constructs. London; New York: Routledge in association with the Centre for Personal Construct Psychology. ISBN 0415037999. OCLC 21760190.
 
-
 ## Instance-Based Reasoning
 
 Roger Shank: [people don't think, they remember](https://www.edge.org/documents/ThirdCulture/q-Ch.9.html)
@@ -62,65 +61,66 @@ E.g. Reverse nearest neighbors
    - That is your _reverse_ nearest neighbor score
 - Sort rows by ther _rnn_ score, print only the highest scroring ones
 
-e.g.786 examples in  [diabtetes.arff](https://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/). If we just show the ones with rnn>= 2 then...
+e.g.786 examples in  [diabtetes.arff](https://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/). If we just show the ones with rnn>= 2 then: 
 
 
 
 ```
-# 0,     0,   100,    98,    95,    89,    84,    72,    46,     0
-          #====, =====, =====, =====, =====, =====, =====, =====, =====, =====
-       # /class,   rnn, :pedi, :mass, :insu, :skin, :preg, :pres,  :age, :plas
-tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     3,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     3,     1,     1,     1
-tested_negative,     2,     1,     1,     1,     1,     3,     1,     2,     1
-tested_negative,     2,     1,     1,     1,     1,     3,     1,     2,     1
-tested_negative,     2,     1,     1,     1,     1,     3,     1,     2,     1
-tested_negative,     2,     3,     1,     1,     1,     1,     1,     1,     1
+#n,         /class,   rnn, :pedi, :mass, :insu, :skin, :preg, :pres,  :age, :plas
+             #====, =====, =====, =====, =====, =====, =====, =====, =====, =====
+      
+              # -,      -,   100,    98,    95,    89,    84,    72,    46,     0
+24, tested_negative,    2,     1,     1,     1,     1,     1,     1,     1,     1 <== 24 repeats
+1,  tested_negative,    2,     3,     1,     1,     1,     1,     1,     1,     1
 %-------------------------------------------------------------------------------
-tested_positive,     2,     1,     1,     1,     1,     1,     1,     1,     1
-tested_positive,     2,     1,     1,     1,     1,     3,     1,     2,     1
-tested_positive,     2,     1,     3,     1,     1,     3,     2,     1,     3
-tested_positive,     2,     1,     3,     1,     3,     1,     2,     1,     3
-tested_positive,     2,     1,     3,     2,     3,     1,     1,     1,     3
-tested_negative,     3,     3,     3,     2,     3,     1,     2,     2,     3
-tested_positive,     3,     3,     1,     1,     1,     3,     2,     2,     3
-tested_positive,     3,     3,     3,     2,     3,     1,     2,     1,     3
-tested_positive,     3,     3,     3,     2,     3,     1,     2,     2,     3
-tested_negative,     4,     1,     1,     2,     1,     1,     1,     1,     3
-tested_negative,     4,     3,     1,     2,     3,     1,     1,     1,     1
-tested_positive,     4,     1,     3,     2,     3,     3,     2,     2,     3
-tested_positive,     6,     3,     3,     2,     1,     3,     2,     2,     3
-tested_positive,     7,     3,     3,     2,     3,     1,     2,     1,     3
-tested_positive,    12,     3,     3,     2,     3,     3,     2,     2,     3
-tested_positive,    18,     3,     3,     2,     3,     3,     2,     2,     3
+1, tested_positive,     2,     1,     1,     1,     1,     1,     1,     1,     1
+1, tested_positive,     2,     1,     1,     1,     1,     3,     1,     2,     1
+1, tested_positive,     2,     1,     3,     1,     1,     3,     2,     1,     3
+1, tested_positive,     2,     1,     3,     1,     3,     1,     2,     1,     3
+1, tested_positive,     2,     1,     3,     2,     3,     1,     1,     1,     3
+2, tested_negative,     3,     3,     3,     2,     3,     1,     2,     2,     3
+1, tested_positive,     3,     3,     1,     1,     1,     3,     2,     2,     3
+1, tested_positive,     3,     3,     3,     2,     3,     1,     2,     1,     3 
+1, tested_negative,     4,     1,     1,     2,     1,     1,     1,     1,     3
+1, tested_negative,     4,     3,     1,     2,     3,     1,     1,     1,     1
+1, tested_positive,     4,     1,     3,     2,     3,     3,     2,     2,     3
+1, tested_positive,     6,     3,     3,     2,     1,     3,     2,     2,     3
+1, tested_positive,     7,     3,     3,     2,     3,     1,     2,     1,     3
+1, tested_positive,    12,     3,     3,     2,     3,     3,     2,     2,     3
+1, tested_positive,    18,     3,     3,     2,     3,     3,     2,     2,     3
 ```
 
-## Don't sweat the small stuff
+Of course, there are other ways to find these centroids:
 
-Don't divide data if the division is smaller than some _epsilon_ 
+- cluster, then for each cluster:
+    - take center of each cluster
+    - take the N most remote points in the cluster
+    - take the N random  points in the cluster
+- decision tree learning; then for each leaf:
+    - take center of each leaf
+    - take the N most remote points in the leaf
+    - take the N random  points in the leaf
 
-- e.g. something less than what the business users can control
-- e.g. some small fraction of the standard devaition 
-      - _Cohen_ is a heuristic for detecting tricially small differences. Trivial if less than _cohen\*sd_  different
-      - Cohen=(0.2,0.5,0.8) = small, medium, large
-      - But this is [somewhat contraversial](https://en.wikipedia.org/wiki/Effect_size#Effect_sizes_descriptors)
+## Generalization
+
+- One example is a _point_ is space
+    - e.g. a=1,b=2,c=3
+- Rules are _volumes_ in space
+     e.g. a < 1, b< 2 (and c equals anything)
+
+### How to generalize
+
+- Combine points into bins (discretiation)
+- Simple
+    - find  _epsilon_ ; 
+        - e.g. something less than what the business users can control
+        - e.g. some small fraction of the standard devaition 
+        - _Cohen_ is a heuristic for detecting tricially small differences. Trivial if less than _cohen\*sd_  different
+        - Cohen=(0.2,0.5,0.8) = small, medium, large
+        - But this is [somewhat contraversial](https://en.wikipedia.org/wiki/Effect_size#Effect_sizes_descriptors)
+        - Divide data into at least bins of size epsilon
+     - find _enough_ 
+    
 
 Don't seperate distributions if their mean difference is very small and/or their variance is large
 
