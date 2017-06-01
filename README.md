@@ -1,3 +1,7 @@
+Buyer beware: this session is NOT a tool playground.
+
+This afternoon... we think!
+
 # When Models go wrong:
 
 <img align=right width=400 src="https://i0.wp.com/www.spacesafetymagazine.com/wp-content/uploads/2014/05/reentry-breakup.jpg?resize=460%2C316">
@@ -297,7 +301,7 @@ The above methods
 - divide many continuous distributions into a handful of bins
 - select for a handful of rows
 - allow us to find a handful of most useful columns
-- and that reduced space works just as well for data mining as the original space
+- and that reduced space [works just as well for data mining as the original space](https://goo.gl/hG5zaR)
 
 _____
 
