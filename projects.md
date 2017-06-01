@@ -8,6 +8,8 @@ Latest work: pre-prints at [http://tiny.cc/menzies](http://tiny.cc/menzies)
 
 ![image](https://cloud.githubusercontent.com/assets/29195/26688608/2053c670-46c1-11e7-8a0a-1207e21abdb3.png)
 
+![image](http://www.ukpostroom.com/images/current-projects.jpg)
+
 ## RTP client
 
 Is agile any good?
