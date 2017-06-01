@@ -90,7 +90,9 @@ e.g.786 examples in  [diabtetes.arff](https://archive.ics.uci.edu/ml/machine-lea
 1, tested_positive,    18,     3,     3,     2,     3,     3,     2,     2,     3
 ```
 
-Of course, there are other ways to find these centroids:
+Note, in the above, the numbers have been _binned_ into a small number of groups; e.g. _age_ has 2 groups and _preg_ has 3. why? see below. 
+
+BTW, there are many other ways to find these centroids:
 
 - cluster, then for each cluster:
     - take center of each cluster
@@ -106,48 +108,25 @@ Of course, there are other ways to find these centroids:
 - One example is a _point_ is space
     - e.g. a=1,b=2,c=3
 - Rules are _volumes_ in space
-     e.g. a < 1, b< 2 (and c equals anything)
+    - e.g. a < 1, b< 2 (and c equals anything)
+- So, to generalize
+   - Combine points into bins (discretiation)
 
-### How to generalize
+### Simple Discretition
 
-- Combine points into bins (discretiation)
-- Simple
-    - find  _epsilon_ ; 
+- find  _epsilon_ ; 
         - e.g. something less than what the business users can control
         - e.g. some small fraction of the standard devaition 
         - _Cohen_ is a heuristic for detecting tricially small differences. Trivial if less than _cohen\*sd_  different
         - Cohen=(0.2,0.5,0.8) = small, medium, large
         - But this is [somewhat contraversial](https://en.wikipedia.org/wiki/Effect_size#Effect_sizes_descriptors)
         - Divide data into at least bins of size epsilon
-     - find _enough_ 
-    
-
-Don't seperate distributions if their mean difference is very small and/or their variance is large
-
-![e.g.](https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Normal_Distribution_PDF.svg/720px-Normal_Distribution_PDF.svg.png)
-
-- [A class for collecting means and standard deviations](https://github.com/golden/src/blob/master/cognitive.gold#L121-L130)
-- [incremental computation of var, mean](https://github.com/golden/src/blob/master/cognitive.gold#L131-L144)
-- [detecting different distributions](https://github.com/golden/src/blob/master/cognitive.gold#L121-L144)
-      - see [these lines](https://github.com/golden/src/blob/master/cognitive.gold#L179-L180) for the core test
-
-Don't divide data if, after the division, the confusion in the result is just the same.
-
-- For numbers, varaince measures confusion
-- For symbols,the analog is _entropy_ = number of bits needed to encode a signal  
-- eg. yes,yes, yes, no,no = (3/5, 2/5)  
-- ent = -1\* sum p\*log2(p) = -1*(2/5\*log2(2/5) + 3/5\*log2(3/5) = 0.97
-     
-If divisions of data do not decreases varaince/entropy, then that is a bad division:
-
-- e.g. 10 orranges, 5 green apples, 1 watermelon
-- before division: ent = -1*(10/16\*log2(10/16) + 5/16\*log2(5/16) + 1/16\*log2(1/16)) = 1.6
-- considering dividing on color= orange and color=green
-- after division there are 10,6 orange and green things
-- ent= -1*(10/16\*log2(10/16) + 6/16\*log2(6/16)) = 0.95
-- [code](https://github.com/golden/src/blob/master/cognitive.gold#L353-L380)
-
-Example: consider divisions to a sorted list _nums.all_. Suppose _nums_ can report its standard deviation as _nums.sd_ then..
+- find _enough_
+        - e.g. _sqrt(N)_
+        - divide numbers into bins bigger than _enough_
+        
+The following code applies _epsilon_ and _enough_ to split the data in _nums.all_ (see the third and fourth _if_ statement).
+The other _if_ statements handle some weird end cases.
 
 ```c
 function binsGrow(t,nums,b,      
@@ -168,12 +147,46 @@ function binsGrow(t,nums,b,
   return r
 }
 ```
+### Trickier Discretization
 
-After the bins are grown, then we can find cuts to the bins that most reduce the _expectedValue_ of the standard devision before and after a cut.
+
+Don't split things unless those splits decrease _confusion_.
+
+- For numbers and symbols, _confusion_ is called _variance_ and _entropy_.
+
+First, variance:
+
+![e.g.](https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Normal_Distribution_PDF.svg/720px-Normal_Distribution_PDF.svg.png)
+
+- [A class for collecting means and standard deviations](https://github.com/golden/src/blob/master/cognitive.gold#L121-L130)
+- [incremental computation of var, mean](https://github.com/golden/src/blob/master/cognitive.gold#L131-L144)
+- [detecting different distributions](https://github.com/golden/src/blob/master/cognitive.gold#L121-L144)
+      - see [these lines](https://github.com/golden/src/blob/master/cognitive.gold#L179-L180) for the core test
+
+Second, entropy
+
+- _entropy_ = number of bits needed to encode a signal  
+- eg. yes,yes, yes, no,no = (3/5, 2/5)  
+- ent = -1\* sum p\*log2(p) = -1*(2/5\*log2(2/5) + 3/5\*log2(3/5) = 0.97
+     
+If divisions of data do not decreases varaince/entropy, then that is a bad division:
+
+- e.g. 10 orranges, 5 green apples, 1 watermelon
+- before division: ent = -1*(10/16\*log2(10/16) + 5/16\*log2(5/16) + 1/16\*log2(1/16)) = 1.6
+- considering dividing on color= orange and color=green
+- after division there are 10,6 orange and green things
+- ent= -1*(10/16\*log2(10/16) + 6/16\*log2(6/16)) = 0.95
+- [code](https://github.com/golden/src/blob/master/cognitive.gold#L353-L380)
+
+Example. The following code is  run as a post-processor to _binsGrow_ (shown above). Bins that should be combined
+get the same _rank_;
+
+Aside: this cose uses  _expectedValue_
 
 - If there are obs of "_x1_"  and "_x2_" seen in "_n1_" and "_n2_" examples then
 - _n=n1+n2_
 - Expected value = _E = n1/n \* x1 + n2/n \* x2_
+- e.g. see the _tmp_ line, below:
 
 Which the following code uses to recusrively split the bins generated above:
 
@@ -185,9 +198,9 @@ function binsCuts(lo,hi,ranks,b4,r,
     for(mid=lo+1; mid<=hi; mid++) {
       xpect(x, lo,    mid, ranks)
       xpect(y, mid+1,  hi, ranks)
-      tmp = x.n/b4.n*x.sd + y.n/b4.n*y.sd  
+      tmp = x.n/b4.n*x.sd + y.n/b4.n*y.sd  #<== for symbols, change .sd to .ent
       if (tmp < best)  
-        if ( diff(x,y) ) {
+        if ( diff(x,y) ) { #<== explained below
           cut  = mid
           best = tmp
           copy(x,xx)
@@ -203,7 +216,7 @@ function binsCuts(lo,hi,ranks,b4,r,
 }
 ```
 
-This code needs a helper function
+Aside: this code needs two helper function
 
 ```c
 function Xpect(i) { 
@@ -217,8 +230,63 @@ function xpect(x,lo,hi,ranks,   j,n1) {
   for(j=lo; j<=hi; j++) { 
     n1    = ranks[j].n
     x.mu += n1 / x.n * ranks[j].mu 
-    x.sd += n1 / x.n * ranks[j].sd
+    x.sd += n1 / x.n * ranks[j].sd 
 }}
+```
+
+### Even Trickier Discretization
+
+Use statistical theory to block spurious splits 
+
+- See the _diff_ call, made above.
+
+Which means we need to know some stats:
+
+- Significance tests (e.g. the t-test) check if to distributions are different by more than random chance
+- Effect size tests (e.g. hedges) comment on the _size_ of the difference
+- We use both 
+
+```c
+function diff(x,y,      s) { 
+  Stats(s)
+  return hedges(x,y,s) && ttest(x,y,s)
+}
+```
+
+For this to work, we need fast ways to incrementally collect mu and standard deviation:
+
+- [incremental computation of var, mean](https://github.com/golden/src/blob/master/cognitive.gold#L131-L144)
+
+In the following, we use assue _x,y_ can report their mean and standard deviation and sample size as e.g.
+`x.n, x.mu, x,sd`.
+
+The Hedges effect size test using magiv numbers from [this study](https://goo.gl/w62iIL). If checks of
+the difference in the mean divided by the standard deviation is bigger than some magic number (0.38)
+
+```c
+function hedges(x,y,s,   nom,denom,sp,g,c) {  
+  nom   = (x.n - 1)*x.sd^2 + (y.n - 1)*y.sd^2
+  denom = (x.n - 1)        + (y.n - 1)
+  sp    = sqrt( nom / denom )
+  g     = abs(x.mu - y.mu) / sp  
+  c     = 1 - 3.0 / (4*(x.n + y.n - 2) - 1)
+  return g * c > 0.38 # from https://goo.gl/w62iIL
+}
+```
+
+The t-test significance test is very similar. It uses _ttest_ to look up a magic threshold value. For details see [here](https://github.com/golden/src/blob/master/cognitive.gold#L149-L198).
+
+```c
+function ttest(x,y,s,    t,a,b,df,c) {
+  # debugged using https://goo.gl/CRl1Bz
+  t  = (x.mu - y.mu) / sqrt(max(10^-64,
+                                x.sd^2/x.n + y.sd^2/y.n ))
+  a  = x.sd^2/x.n
+  b  = y.sd^2/y.n
+  df = (a + b)^2 / (10^-64 + a^2/(x.n-1) + b^2/(y.n - 1))
+  c  = ttest1(s, int( df + 0.5 ), s.conf)
+  return abs(t) > c
+}
 ```
 
 
