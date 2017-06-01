@@ -120,15 +120,15 @@ BTW, there are many other ways to find these centroids:
 ### Simple Discretition
 
 - find  _epsilon_ ; 
-        - e.g. something less than what the business users can control
-        - e.g. some small fraction of the standard deviation 
-        - _Cohen_ is a heuristic for detecting trivially small differences. Trivial if less than _cohen\*sd_  different
-        - Cohen=(0.2,0.5,0.8) = small, medium, large
-        - But this is [somewhat contraversial](https://en.wikipedia.org/wiki/Effect_size#Effect_sizes_descriptors)
-        - Divide data into at least bins of size epsilon
+     - e.g. something less than what the business users can control
+     - e.g. some small fraction of the standard deviation 
+     - _Cohen_ is a heuristic for detecting trivially small differences. Trivial if less than _cohen\*sd_  different
+     - Cohen=(0.2,0.5,0.8) = small, medium, large
+     - But this is [somewhat contraversial](https://en.wikipedia.org/wiki/Effect_size#Effect_sizes_descriptors)
+     - Divide data into at least bins of size epsilon
 - find _enough_
-        - e.g. _sqrt(N)_
-        - divide numbers into bins bigger than _enough_
+     - e.g. _sqrt(N)_
+     - divide numbers into bins bigger than _enough_
         
 The following code applies _epsilon_ and _enough_ to split the data in _nums.all_ (see the third and fourth _if_ statement).
 The other _if_ statements handle some weird end cases.
