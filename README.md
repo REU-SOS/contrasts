@@ -59,7 +59,56 @@ E.g. Reverse nearest neighbors
    - Count how many times someone is pointing to you
    - That is your _reverse_ nearest neighbor score
 - Sort rows by ther _rnn_ score, print only the highest scroring ones
-- Do not print the columns
+
+e.g.786 examples in  [diabtetes.arff](https://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/). If we just show the ones with rnn>= 2 then...
+
+
+
+```
+# 0,     0,   100,    98,    95,    89,    84,    72,    46,     0
+          #====, =====, =====, =====, =====, =====, =====, =====, =====, =====
+       # /class,   rnn, :pedi, :mass, :insu, :skin, :preg, :pres,  :age, :plas
+tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     1,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     3,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     3,     1,     1,     1
+tested_negative,     2,     1,     1,     1,     1,     3,     1,     2,     1
+tested_negative,     2,     1,     1,     1,     1,     3,     1,     2,     1
+tested_negative,     2,     1,     1,     1,     1,     3,     1,     2,     1
+tested_negative,     2,     3,     1,     1,     1,     1,     1,     1,     1
+%-------------------------------------------------------------------------------
+tested_positive,     2,     1,     1,     1,     1,     1,     1,     1,     1
+tested_positive,     2,     1,     1,     1,     1,     3,     1,     2,     1
+tested_positive,     2,     1,     3,     1,     1,     3,     2,     1,     3
+tested_positive,     2,     1,     3,     1,     3,     1,     2,     1,     3
+tested_positive,     2,     1,     3,     2,     3,     1,     1,     1,     3
+tested_negative,     3,     3,     3,     2,     3,     1,     2,     2,     3
+tested_positive,     3,     3,     1,     1,     1,     3,     2,     2,     3
+tested_positive,     3,     3,     3,     2,     3,     1,     2,     1,     3
+tested_positive,     3,     3,     3,     2,     3,     1,     2,     2,     3
+tested_negative,     4,     1,     1,     2,     1,     1,     1,     1,     3
+tested_negative,     4,     3,     1,     2,     3,     1,     1,     1,     1
+tested_positive,     4,     1,     3,     2,     3,     3,     2,     2,     3
+tested_positive,     6,     3,     3,     2,     1,     3,     2,     2,     3
+tested_positive,     7,     3,     3,     2,     3,     1,     2,     1,     3
+tested_positive,    12,     3,     3,     2,     3,     3,     2,     2,     3
+tested_positive,    18,     3,     3,     2,     3,     3,     2,     2,     3
+```
 
 ## Don't sweat the small stuff
 
