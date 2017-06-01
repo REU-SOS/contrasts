@@ -29,6 +29,8 @@ Wei Fu: Smart optimizers
 
 - Strange tales of our optimizers... working too well. Why?
 
+![eg](https://i.ytimg.com/vi/tNAIHEse7Ms/maxresdefault.jpg)
+
 JianFeng: Evolutionary programs (GAs, Ant Colony Optimization)
 
 - Learning better ways to configure the cloiud
