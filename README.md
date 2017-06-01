@@ -39,15 +39,27 @@ e.g. Kelly's personel construct theory:
 - humans reason about the difference between our constructs rather than the constructs themselves
 - Kelly, George (1991) [first publsihed 1955]. The psychology of personal constructs. London; New York: Routledge in association with the Centre for Personal Construct Psychology. ISBN 0415037999. OCLC 21760190.
 
-my Spiel would be cognitive. that stats are "m'eh" but the real game is showing decision makers  things that let them do things. so informative "visualizations" that highligtht the deltas between things (Kelly's personnel construct theory: folks dont know "things", what they really know are the minimal differences between things) .
 
-which leads to the mathematics of diversity (entropy, variance) and how to distinguish between things (bootstrapping, effectSize) and how to apply that theory of differences to data mining (clustering, discretization, recursive tree learning).  
+## Instance-Based Reasoning
 
-the final cherry on this cake would be scott-knot stuff seen at icse recently where  results are chunked up into BIG groups and we no longer focus on micro deltas but on BIG MOFO DIFFERENCES.
+Roger Shank: people don't think, they remember
 
-so not sure if that is an REU thing or a lecture for my foundations of software science thing in the fall
+- Reasoning = reflecting over one's own library of _exemplars_ of past events
+- Learning = finding good _exemplars_
 
-your call. happy to help. happy to not. what ya need?
+Note that most data sets contain such exemplars:
+
+- A "well-supported"  model is built from _N_ examples, using multiple examples fron _N_ to support different parts of the model
+- That is, the _N_ examples contain many repeated effects (and we try to avoid modeling the rare, one-off anomalous effects)
+- So any data set that supports a model can be condensed by removing the repeats.
+
+E.g. Reverse nearest neighbors
+
+- Everyone point to their nearest neighbor
+   - Count how many times someone is pointing to you
+   - That is your _reverse_ nearest neighbor score
+- Sort rows by ther _rnn_ score, print only the highest scroring ones
+- Do not print the columns
 
 ## Don't sweat the small stuff
 
@@ -140,10 +152,41 @@ function binsCuts(lo,hi,ranks,b4,r,
 }
 ```
 
+This code needs a helper function
+
+```c
+function Xpect(i) { 
+  new(i); 
+  i.n = i.mu = i.sd = 0 
+}
+function xpect(x,lo,hi,ranks,   j,n1) {
+  Xpect(x)
+  for(j=lo; j<=hi; j++) 
+    x.n += ranks[j].n
+  for(j=lo; j<=hi; j++) { 
+    n1    = ranks[j].n
+    x.mu += n1 / x.n * ranks[j].mu 
+    x.sd += n1 / x.n * ranks[j].sd
+}}
+```
 
 
+_____
 
-# Maths that matters
+# Old nodes, ignore
+
+maths that matters
+
+
+my Spiel would be cognitive. that stats are "m'eh" but the real game is showing decision makers  things that let them do things. so informative "visualizations" that highligtht the deltas between things (Kelly's personnel construct theory: folks dont know "things", what they really know are the minimal differences between things) .
+
+which leads to the mathematics of diversity (entropy, variance) and how to distinguish between things (bootstrapping, effectSize) and how to apply that theory of differences to data mining (clustering, discretization, recursive tree learning).  
+
+the final cherry on this cake would be scott-knot stuff seen at icse recently where  results are chunked up into BIG groups and we no longer focus on micro deltas but on BIG MOFO DIFFERENCES.
+
+so not sure if that is an REU thing or a lecture for my foundations of software science thing in the fall
+
+your call. happy to help. happy to not. what ya need?
 
 Cognitive maths. Maths that fuels human decision making:
 
