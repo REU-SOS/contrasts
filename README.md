@@ -20,7 +20,6 @@ Columbia, and crew, dies on re-entry
 
 
 # Congitive
-contrasts
 
 ![image](https://cloud.githubusercontent.com/assets/29195/26566573/27c63d1c-44c2-11e7-9506-d4294969e171.png)
 
@@ -30,6 +29,10 @@ contrasts
      - WRONG: Mind is a passive system that gathers its contents from its environment and, through the act of knowing, produces a copy of the order of reality
 - Rather, in the act of knowing, it is the human mind that actively gives meaning and order to that reality to which it is responding
       - We see, we react, then we know
+      
+e.g. Explanation
+
+- [When explaining something, one size does not fit all](ftp://ftp.cs.indiana.edu/pub/leake/p-91-01.pdf). Explanations need to be tailored to the knowledge and goals of the audience. 
 
 e.g. Kelly's personel construct theory:
 
@@ -45,6 +48,20 @@ the final cherry on this cake would be scott-knot stuff seen at icse recently wh
 so not sure if that is an REU thing or a lecture for my foundations of software science thing in the fall
 
 your call. happy to help. happy to not. what ya need?
+
+## Don't sweat the small stuff
+
+Stats tests:
+
+- means don't mean much
+- 42 == 44 if they come from distributions with large variances
+
+![e.g.](https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Normal_Distribution_PDF.svg/720px-Normal_Distribution_PDF.svg.png)
+
+- [A class for collecting means and standard deviations](https://github.com/golden/src/blob/master/cognitive.gold#L121-L144)
+- [incremental computation of var, mean](https://github.com/golden/src/blob/master/cognitive.gold#L131-L144)
+- [detecting different distributions](https://github.com/golden/src/blob/master/cognitive.gold#L121-L144)
+
 
 # Maths that matters
 
